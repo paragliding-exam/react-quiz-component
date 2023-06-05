@@ -1,5 +1,27 @@
 # react-quiz-component
 
+This is a forked version of the package because we needed to modify the styles for use it at [paragliding-exam/frontend](https://github.com/paragliding-exam/frontend)
+
+## Guidelines
+
+- [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- [ESLint](https://eslint.org/)
+
+# Publish package
+
+Create a new release and a Github action
+will publish it at the Github NPM repo. 
+
+Follow [semver](https://semver.org/) forthe tag name of the release.
+
+## Precommit
+
+It's automatically installed when running `npm install`. We use [husky](https://www.npmjs.com/package/husky). It runs the next checks:
+
+- Pass [Guidelines](#Guidelines)
+
+---
+
 :orange_book: React Quiz Component 
 [![NPM version](https://img.shields.io/npm/v/react-quiz-component.svg)](https://www.npmjs.com/package/react-quiz-component) [![License](https://img.shields.io/npm/l/react-quiz-component.svg)](https://github.com/wingkwong/react-quiz-component/blob/master/LICENSE) [![Total NPM Download](https://img.shields.io/npm/dt/react-quiz-component.svg)](https://www.npmjs.com/package/react-quiz-component)
 
