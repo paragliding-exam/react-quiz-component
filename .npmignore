@@ -1,4 +1,6 @@
 docs
 src
 .babelrc
+.github
+.prettierignore
 webpack.config.js
