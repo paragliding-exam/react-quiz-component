@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Explanation = function ({ question, isResultPage }) {
   const { explanation } = question;
@@ -8,11 +8,7 @@ const Explanation = function ({ question, isResultPage }) {
   }
 
   if (isResultPage) {
-    return (
-      <div className="explanation">
-        {explanation}
-      </div>
-    );
+    return <div className="explanation">{explanation}</div>;
   }
 
   return (
