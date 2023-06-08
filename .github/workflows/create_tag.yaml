@@ -1,0 +1,36 @@
+name: Publish NPM Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@paragliding-exam"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run lib
+
+      - name: Set version
+        run: npm version ${{github.event.release.tag_name}}
+
+      - name: Publish to private GitHub repository
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

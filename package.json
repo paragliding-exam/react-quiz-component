@@ -1,5 +1,5 @@
 {
-  "name": "react-quiz-component",
+  "name": "@paragliding-exam/react-quiz-component",
   "version": "0.5.1",
   "description": "React Quiz Component",
   "main": "lib/Quiz.js",
@@ -9,7 +9,10 @@
     "lib:watch": "babel src/lib -w -d lib --copy-files",
     "docs": "webpack-dev-server --mode development",
     "docs:prod": "webpack --mode production",
-    "lint": " ./node_modules/.bin/eslint src --ext .jsx --ext .js --fix"
+    "lint": "eslint src --ext .jsx",
+    "prepare": "husky install",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "react",
@@ -26,33 +29,46 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "babel-loader": "^8.0.5",
     "concurrently": "^3.5.1",
     "css-loader": "^3.4.2",
-    "eslint": "^8.4.1",
-    "eslint-config-airbnb": "^19.0.2",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
     "html-webpack-plugin": "5.3.2",
+    "husky": "^8.0.3",
     "prop-types": "^15.7.2",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^0.21.0",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "prettier": "^2.7.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "react/jsx-no-target-blank": "off"
+    }
   },
   "author": "WONG, Wing Kam <wingkwong.code@gmail.com>",
-  "homepage": "https://github.com/wingkwong/react-quiz-component",
+  "homepage": "https://github.com/paragliding-exam/react-quiz-component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wingkwong/react-quiz-component.git"
+    "url": "https://github.com/paragliding-exam/react-quiz-component.git"
   },
   "dependencies": {
-    "@webpack-cli/serve": "^1.6.1",
     "dompurify": "^2.0.8",
+    "react": "^18.2.0",
     "snarkdown": "^2.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
